@@ -25,3 +25,24 @@ function getComputerChoice()
   return choices[choice];
 }
 
+function playRound(playerSelection, computerSelection)
+{
+  let playerWin = true;
+  let tie = false;
+
+  if (playerSelection === computerSelection)
+  {
+    playerWin = false;
+    tie = true;
+  }
+  else if ((playerSelection === "rock" && computerSelection === "paper") || 
+           (playerSelection === "paper" && computerSelection === "scissors") ||
+           (playerSelection === "scissors" && computerSelection === "rock"))
+  {
+    playerWin = false;
+  }
+
+  return tie ? `Tie! Both of you chose ${computerSelection}` : 
+         playerWin ? `You win! Your ${playerSelection} beats the computer's ${computerSelection}!` : 
+         `You lose! The computer's ${computerSelection} beats your ${playerSelection}!`;
+}
