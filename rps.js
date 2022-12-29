@@ -1,22 +1,3 @@
-/*
-
-getComputerChoice()
-- No parameters
-- Return rock, paper, or scissors randomly
-
-playRound(playerSelection, computerSelection)
-- Compare player & computer selection to determine winner
-- Return a string stating the outcome
-- Player selection case insensitive (toUpperCase)
-
-game()
-- No parameters
-- Loop 5 times, calling the playRound function on each iteration
-- Have two counters to keep track of score
-- State winner or loser at the end
-
-*/
-
 const NUM_ROUNDS = 5;
 let PLAYER_WINS = 0;
 let COMPUTER_WINS = 0;
@@ -71,19 +52,28 @@ function game()
     console.log(playRound(playerChoice, computerChoice));
   }
 
-  if(PLAYER_WINS === COMPUTER_WINS)
-  {
-    console.log("You both tie!");
-  }
-  else if (PLAYER_WINS > COMPUTER_WINS)
-  {
-    console.log("You win!");
-  }
-  else
-  {
-    console.log("You lose!");
-  }
+  console.log(logWinner());
 
   PLAYER_WINS = 0;
   COMPUTER_WINS = 0;
+}
+
+function logWinner()
+{
+  let winner;
+
+  if(PLAYER_WINS === COMPUTER_WINS)
+  {
+    winner = "You both tie!";
+  }
+  else if (PLAYER_WINS > COMPUTER_WINS)
+  {
+    winner = "You win!";
+  }
+  else
+  {
+    winner = "You lose!";
+  }
+
+  return winner;
 }
