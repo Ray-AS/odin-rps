@@ -1,10 +1,9 @@
-const NUM_ROUNDS = 5;
+//const NUM_ROUNDS = 5;
 let PLAYER_WINS = 0;
 let COMPUTER_WINS = 0;
 
 function getComputerChoice()
 {
-  // Return random choice from array
   return ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
 }
 
@@ -42,13 +41,13 @@ function game()
   let playerChoice;
   let computerChoice;
 
-  for(let i = 0; i < NUM_ROUNDS; i++)
-  {
+  //for(let i = 0; i < NUM_ROUNDS; i++)
+  //{
     playerChoice = prompt("What is your choice? [rock | paper | scissors]").toLowerCase();
     computerChoice = getComputerChoice();
 
     console.log(playRound(playerChoice, computerChoice));
-  }
+  //}
 
   console.log(logWinner());
 
