@@ -62,7 +62,7 @@ function logWinner()
 {
   let winner;
 
-  if(PLAYER_WINS === COMPUTER_WINS)
+  if(PLAYER_WINS === COMPUTER_WINS) 
   {
     winner = "You both tie!";
   }
